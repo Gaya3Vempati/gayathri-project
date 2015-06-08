@@ -1,0 +1,24 @@
+<div class="headers">
+  <div class="containers">
+    <a href="/" alt="Home" title="Home">
+    <img src="http://s3.amazonaws.com/codecademy-content/projects/innovation-cloud/cloud.svg"></a>
+    <h1>Post Message</h1>
+  </div>
+</div>
+
+<div class="create">
+  <div class="container">
+    
+    <!-- Your code here -->
+    <%= form_for :messages do |f| %>  
+      <div class="field"> 
+        <%= f.text_area :content %> 
+      </div> 
+      <div class="actions"> 
+        <%= f.submit "Create" %> 
+          <a class="goback" href = "/message_board">Back</a>
+      </div> 
+    <% end %>
+
+  </div>
+</div>

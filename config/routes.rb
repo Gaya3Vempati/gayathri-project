@@ -1,4 +1,17 @@
 GayathriProject::Application.routes.draw do
+  get '/thanks' => 'pages#thanks'
+  resources :signups
+  get '/signups/show' =>  'signups#show'
+  get '/signups/new'  
+  root to: 'signups#new'
+  post 'signups' => 'signups#create'
+
+  #message_board route
+  get '/message_board' => 'message_board#view_board'
+  get 'message_board/new' => 'message_board#board_new'
+  post 'message_board/new' => 'message_board#board_create'
+
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,8 +61,7 @@ GayathriProject::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'welcome#index'
-
+  
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
